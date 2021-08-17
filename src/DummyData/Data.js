@@ -79,14 +79,47 @@ export const thumbnailListing = [
 ];
 
 /////////////////////////////////
-
 export const premiumPackageRules = [
-  "$99.99/Month",
-  "All included of Silver Membership",
-  "All new matches will show you first \n for 24 hrs and then live for others",
-  "Blind date dinner definitely in \n celebrities club (Conditions Apply)",
-  "Get your first month free if you get \n register now with $5 Payment",
-];
+  {
+    id:'1',
+    logoName: "pkglogo.PNG",
+    membershipName: "Gold Membership",
+    bgc:"green",
+    rules: [
+    "$99.99/Month",
+    "All included of Silver Membership",
+    "All new matches will show you first \n for 24 hrs and then live for others",
+    "Blind date dinner definitely in \n celebrities club (Conditions Apply)",
+    "Get your first month free if you get \n register now with $5 Payment",
+    ]
+  },
+  {
+    id:'2',
+    logoName: "pkglogo.PNG",
+    membershipName: "Silver Membership",
+    bgc:"red",
+    rules: [
+    "$99.99/Month",
+    "All included of Silver Membership",
+    "All new matches will show you first \n for 24 hrs and then live for others",
+    "Blind date dinner definitely in \n celebrities club (Conditions Apply)",
+    "Get your first month free if you get \n register now with $5 Payment",
+    ]
+  },
+  {
+    id:'3',
+    logoName: "pkglogo.PNG",
+    membershipName: "Regular Membership",
+    bgc:"blue",
+    rules: [
+    "$99.99/Month",
+    "All included of Silver Membership",
+    "All new matches will show you first \n for 24 hrs and then live for others",
+    "Blind date dinner definitely in \n celebrities club (Conditions Apply)",
+    "Get your first month free if you get \n register now with $5 Payment",
+    ]
+  },
+]
 
 //////////////////////////////////
 
@@ -186,13 +219,49 @@ export const firstSelectData = [
   { id: 2, label: "My Location", option: "Nariman Point", icon: "" }
 ];
 
-export const memberPreference = [
-  { id: 1, label: "My Location", option: "Nariman Point", icon: "arrow.png" },
-  { id: 2, label: "Maximum Distance", option: "100 Mtr", icon: "arrow.png" },
-  { id: 3, label: "Religion", option: "Open to all", icon: "arrow.png" },
-  { id: 4, label: "Ethnicity", option: "Open to all", icon: "arrow.png" },
-];
-
+export const memberPreferences = [
+  {id:1, label:"My Location", options:["Nariman Point", "Nariman Point 1", "Nariman Point 3"]},
+  {id:2, label:"Maximum Distance", options:["100 mtr", "200 mtr", "300 mtr"]},
+  {id:3, label:"Religion", options:["Open to all", "Not open to all", "Open to one"]},
+  {id:4, label:"Ethnicity", options:["Open to all", "Not open to all", "Open to one"]},
+]
 export const preferredPreference = [
-  { id: 1, label: "My Location", option: "Nariman Point", icon: "arrow.png" },
+  {id:5, label:"My Location", options:["Nariman Point", "Nariman Point 1", "Nariman Point 3"]}]
+
+
+/////////////////////////////////////////
+
+export const homeImages = [
+  {
+    id: 1,
+    homeImg:
+      "https://images.unsplash.com/photo-1540076156429-35ffe82b7870?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
+      text:"LOREM IPSUM DOLOR SIT AMET -1"
+  },
+  {
+    id: 2,
+    homeImg:
+      "https://images.unsplash.com/photo-1531747056595-07f6cbbe10ad?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+      text:"LOREM IPSUM DOLOR SIT AMET -2"
+  },
+ 
+  {
+    id: 3,
+    homeImg:
+      "https://images.unsplash.com/photo-1605432722372-5f8acd7c7d93?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
+    text:"LOREM IPSUM DOLOR SIT AMET -3"
+  },
+  {
+    id: 4,
+    homeImg:
+      "https://images.unsplash.com/photo-1615966650071-855b15f29ad1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1133&q=80",
+    text:"LOREM IPSUM DOLOR SIT AMET -4"
+  },
+
+  {
+    id: 5,
+    homeImg:
+      "https://images.unsplash.com/photo-1508407576665-2d9a5d638a7e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80",
+      text:"LOREM IPSUM DOLOR SIT AMET -5"
+  },
 ];

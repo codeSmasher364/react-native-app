@@ -9,9 +9,10 @@ import SelectSetting from "../components/setting/SelectSetting";
 
 import {
   firstSelectData,
-  memberPreference,
+  memberPreferences,
   preferredPreference,
 } from "../DummyData/Data";
+import SelectForm from "../components/setting/SelectForm";
 
 const Setting = () => {
   return (
@@ -50,7 +51,14 @@ const Setting = () => {
           { top: "18rem" },
         ]}
       >
-        <SelectSetting firstSelectData={memberPreference} />
+
+        {/* /////////////////// */}
+
+        {memberPreferences.map((data) => {
+          return <SelectForm key={data.id} data={data} />;
+        })}
+
+        {/* /////////////////// */}
       </View>
 
       <View style={[SettingConstants.selectMemberTextView, { width: "95%" }]}>
@@ -69,7 +77,9 @@ const Setting = () => {
           { top: "40.5rem" },
         ]}
       >
-        <SelectSetting firstSelectData={preferredPreference} />
+        {preferredPreference.map((data) => {
+          return <SelectForm key={data.id} data={data} />;
+        })}
       </View>
       <Footer imgName="footer.png" style={{ height: "70%", width: "100%" }} />
     </View>

@@ -1,6 +1,6 @@
 import React from "react";
 
-import { View, Image } from "react-native";
+import { View, Image, ScrollView } from "react-native";
 import * as Constants from "../helpers/constants";
 
 import Footer from "../components/home/Footer";
@@ -17,11 +17,13 @@ const HomeScreen = () => {
         style={[Constants.styles.backgroundImage]}
         source={require("../../assets/images/homebg.png")}
       />
-      <HomeViews />
-      <AllExistingMember
-        existingMembersData={existingMembersData}
-        style={{ height: "30%", top: "62%" }}
-      />
+      <View style={{position: "absolute",height:"90vh",width:"100vw", top:"1%", overflow:"scroll"}}>
+        <HomeViews />
+        <AllExistingMember
+          existingMembersData={existingMembersData}
+          style={{ height: "70%", top: "71%" }}
+        />
+      </View>
       <Footer imgName="footer.png" style={{ height: "70%", width: "100%" }} />
     </View>
   );

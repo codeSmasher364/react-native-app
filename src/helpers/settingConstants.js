@@ -33,5 +33,26 @@ export const styles = StyleSheet.create({
         height: ".6rem",
         width: "1rem",
         marginRight: "1.5rem",
+    },
+    pickerInput: {
+        height: "3.90rem",
+        width: "90%",
+        border: "none",
+        backgroundColor: "transparent",
+        zIndex: 1,
+        fontSize: "1rem",
+        marginTop: "1.3rem",
+    },
+    selectViewBox:{
+        padding: ".2px",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+    },
+    selectText2:{
+        position: "absolute",
+        left: 0,
+        marginTop: ".3rem",
+        color: "#a59bbc",
       },
 })

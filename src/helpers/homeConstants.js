@@ -9,6 +9,7 @@ export const logoView = tailwind(`w-20 h-20 rounded-full bg-purple-50 mt-2`);
 export const logoViewOfFullProfile = tailwind(`absolute top-7 left-7 flex items-center justify-center bg-white`);                      
 export const homeLogo = tailwind(`w-12 h-9`);
 
+export const kiss = tailwind(`flex flex-row`)
 export const kissDateView = tailwind(`w-full -mt-2`);
 export const kissDateImg = tailwind(`w-full h-60 relative`);
 export const kissDateText = tailwind(`text-white font-bold absolute left-8 top-2/4 text-base leading-5 w-28`);
@@ -20,7 +21,7 @@ export const descriptionsText = tailwind(`text-sm mt-1 mb-2 leading-5`);
 export const existingUserView = tailwind(`w-full absolute flex flex-wrap flex-row items-center justify-evenly overflow-scroll`);
 
 export const existingUserImg = tailwind(`relative w-44 h-60 mb-5 rounded-2xl`);
-export const existingUserImgOverlay = tailwind(`absolute w-44 h-60 mb-5 rounded-3xl`);
+export const existingUserImgOverlay = tailwind(`absolute w-44 h-60 mb-5 rounded-2xl`);
 
 export const existingMemberNameText = tailwind(`font-bold text-white text-base`);
 export const existingMemberName = tailwind(`font-bold text-white text-xs mt-1`);
@@ -42,8 +43,9 @@ export const styles = StyleSheet.create({
   },
   descriptionsView: {
     position: "absolute",
-    top: "87%",
+    top: "100%",
     width: "89%",
+    marginTop:".5rem"
   },
   existingMemberNameView: {
     position: "absolute",

@@ -1,6 +1,14 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 
-import { Text, View, Image, TouchableOpacity } from "react-native";
+import {
+  View,
+  Image,
+  StyleSheet,
+  Animated,
+  Dimensions,
+  Text,
+  FlatList,
+} from "react-native";
 
 import * as Constants from "../helpers/constants";
 import * as PremiumPackageConstants from "../helpers/premiumPackage";
@@ -8,11 +16,24 @@ import * as ReferFriendsConstants from "../helpers/referFriends";
 
 import Footer from "../components/home/Footer";
 import Header from "../components/premiumPackage/Header";
-import PremiumRules from "../components/premiumPackage/PremiumRules";
 
-import {premiumPackageRules } from "../DummyData/Data"
+import SliderRules from "../components/premiumPackage/SliderRules";
+
+let { width } = Dimensions.get("window");
+let height = "75vh";
+
+import { premiumPackageRules } from "../DummyData/Data";
+import Paginator from "../components/premiumPackage/Paginator";
 
 const PremiumPackage = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const scrollX = useRef(new Animated.Value(0)).current;
+  const viewConfig = useRef({ viewAreaCoveragePercentThreshold: 50 }).current;
+  const slideRef = useRef(null);
+
+  const viewableItemsChanged = useRef(({ viewableItems }) => {
+    setCurrentIndex(viewableItems[0]);
+  }).current;
 
   return (
     <View>
@@ -23,42 +44,32 @@ const PremiumPackage = () => {
 
       <Header />
 
-      <View
-        style={[PremiumPackageConstants.mainLogoView, Constants.CommonStyle]}
-      >
-        <Image
-          style={PremiumPackageConstants.mainLogoImg}
-          source={require("../../assets/images/pkglogo.png")}
-        />
-        <Text style={PremiumPackageConstants.membershipViewText}>
-          Gold Membership
-        </Text>
-        <View
-          style={[
-            ReferFriendsConstants.referFriendsViewLine,
-            { top: "12.8rem" },
-          ]}
-        ></View>
+      {/* ////////////////////////////////// */}
 
-        <PremiumRules premiumPackageRules={premiumPackageRules} />
-      </View>
-
-      <View
+      <FlatList
+        data={premiumPackageRules}
+        renderItem={({ item }) => <SliderRules item={item} />}
+        pagingEnabled
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        bounces={false}
+        keyExtractor={(item) => item.id}
+        onScroll={Animated.event(
+          [{ nativeEvent: { contentOffset: { x: scrollX } } }],
+          { useNativeDriver: false }
+        )}
+        scrollEventThrottle={32}
+        onViewableItemsChanged={viewableItemsChanged}
+        viewabilityConfig={viewConfig}
+        ref={slideRef}
         style={[
-          PremiumPackageConstants.membershipButtonView,
-          Constants.CommonStyle,
+          PremiumPackageConstants.mainLogoView,
+          { width, height },
         ]}
-      >
-        <TouchableOpacity style={PremiumPackageConstants.buttonTouch}>
-          <Text style={PremiumPackageConstants.buttonTouchText}>
-            GET THIS PACKAGE
-          </Text>
-        </TouchableOpacity>
-        <Image
-          style={[PremiumPackageConstants.dots]}
-          source={require("../../assets/images/membershipdots.png")}
-        />
-      </View>
+      />
+      <Paginator data={premiumPackageRules} scrollX={scrollX} currentIndex={ currentIndex} />
+
+      {/* /////////////////////////////////////// */}
 
       <Footer imgName="footer.png" style={{ height: "70%", width: "100%" }} />
     </View>

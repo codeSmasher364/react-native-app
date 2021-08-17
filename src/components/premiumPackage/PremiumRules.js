@@ -5,7 +5,7 @@ import { Text, View, Image } from "react-native";
 import * as Constants from "../../helpers/constants";
 import * as PremiumPackageConstants from "../../helpers/premiumPackage";
 
-const PremiumRules = ({ premiumPackageRules }) => {
+const PremiumRules = ({ rules }) => {
   return (
     <View
       style={[
@@ -13,9 +13,9 @@ const PremiumRules = ({ premiumPackageRules }) => {
         Constants.CommonStyle,
       ]}
     >
-      {premiumPackageRules.map((plan) => {
+      {rules.map((plan,i) => {
         return (
-          <View style={PremiumPackageConstants.membershipRule} key={plan}>
+          <View style={PremiumPackageConstants.membershipRule} key={i}>
             <Image
               style={PremiumPackageConstants.styles.listIcon}
               source={require("../../../assets/images/listtick.png")}

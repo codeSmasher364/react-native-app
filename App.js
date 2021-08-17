@@ -17,7 +17,7 @@ const App = () => {
 
      return(
        <View>
-          <SplashScreen/>
+          {/* <SplashScreen/> */}
       
           {/* <HomeScreen /> */}
 
@@ -35,7 +35,7 @@ const App = () => {
 
           {/* <WinnerScreen/> */}
 
-          {/* <Setting/> */}
+          <Setting/>
        </View>
      );
 }
