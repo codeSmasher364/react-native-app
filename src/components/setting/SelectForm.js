@@ -10,10 +10,10 @@ const SelectForm = ({ data }) => {
   return (
     <>
       <View
-        style={[SettingConstants.selectView, SettingConstants.selectViewBox]}
+        style={[SettingConstants.selectView, SettingConstants.styles.selectViewBox]}
       >
         <Text
-          style={[SettingConstants.selectText, SettingConstants.selectText2]}
+          style={[SettingConstants.selectText, SettingConstants.styles.selectText2]}
         >
           {data.label}
         </Text>
